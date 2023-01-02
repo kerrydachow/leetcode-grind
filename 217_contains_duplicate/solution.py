@@ -25,27 +25,35 @@ class Solution:
                     return True
         return False
 
-    def contains_duplicate_list(self, nums: list[int]) -> bool:
+    def contains_duplicate_dictionary(self, nums: list[int]) -> bool:
         """
-        List
-        ----
-        Iterate through every element and append to a new list, if
-        the element is contained in the new list before the for loop
+        Dictionary
+        ----------
+        Iterate through every element and append to a new dict, if
+        the element is contained in the new duct before the for loop
         is complete, return True, else return False.
 
-        >>> Solution().contains_duplicate_list([1,2,3,1])
+        Dictionary "x in d" operation has an average time complexity of
+        O(1) and a worse case of O(n).
+
+        List "x in l" operation has an average time complexity of O(n).
+
+        Therefore, a dictionary is more efficent when finding duplicates
+        of a large list.
+
+        >>> Solution().contains_duplicate_dictionary([1,2,3,1])
         True
-        >>> Solution().contains_duplicate_list([1,2,3,4])
+        >>> Solution().contains_duplicate_dictionary([1,2,3,4])
         False
-        >>> Solution().contains_duplicate_list([1,1,1,3,3,4,3,2,4,2])
+        >>> Solution().contains_duplicate_dictionary([1,1,1,3,3,4,3,2,4,2])
         True
         """
-        visited = []
+        visited = {}
         for i in nums:
             if i in visited:
                 return True
             else:
-                visited.append(i)
+                visited[i] = 1
         return False
 
     def contains_duplicate_set(self, nums: list[int]) -> bool:
