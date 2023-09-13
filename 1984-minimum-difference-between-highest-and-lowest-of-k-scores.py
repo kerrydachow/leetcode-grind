@@ -22,4 +22,5 @@ class Solution:
         res = float("inf")
         for j in range(k - 1, len(nums)):
             res = min(res, nums[j] - nums[i])
+            i += 1
         return res
