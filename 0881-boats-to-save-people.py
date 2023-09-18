@@ -7,7 +7,7 @@ class Solution:
         -   Two pointers
         -   Pair the heaviest, with lightest
         -   If a pair can go on a boat, increment i
-        -   Else always increment j
+        -   Always decrement j at each iteration
 
         Complexity Analysis
         -------------------
