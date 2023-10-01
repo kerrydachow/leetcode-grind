@@ -31,3 +31,33 @@ class Solution:
             elif directory not in skips:
                 res.append(directory)
         return "/" + "/".join(res)
+
+
+class Solution:
+    """
+    Key Takeaways
+    -------------
+    -   Same solution as above, but no set
+    -   Use if elif else condition
+
+    Complexity Analysis
+    -------------------
+    Time Complexity: O(n)
+        -   split: O(n)
+        -   iterate through split path: O(n)
+
+    Space Complexity: O(n)
+        -   stack: O(n)
+        -   string concatenation: O(n)
+    """
+    def simplifyPath(self, path: str) -> str:
+        stack = []
+        for directory in path.split("/"):
+            if directory == "..":
+                if stack:
+                    stack.pop()
+            elif directory == "" or directory == ".":
+                continue
+            else:
+                stack.append(directory)
+        return "/" + "/".join(stack)
