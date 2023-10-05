@@ -85,7 +85,7 @@ class Solution:
             if nums[mid] >= target:
                 hi = mid
             else:
-                lo = mid - 1
+                lo = mid + 1
         return lo if nums[lo] == target else -1
 
 
